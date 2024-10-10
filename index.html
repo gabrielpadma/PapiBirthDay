@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <title>Portofolio Tailwind Css</title>
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  </head>
+  
+  <div id="splashScreen" class="splash-screen relative flex items-center justify-center h-screen">
+    <img src="/dist/img/papi-card.png" alt="Papi Card" class="object-cover h-full auto" />
+    <button id="enterSiteBtn" class="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-slate-400 text-white py-2 px-4 rounded-lg shadow-md hover:bg-slate-700">
+        MULAI
+    </button>
+
+</div>
+
+
+    <audio loop id="myAudio">
+      <source src="songs.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- header start -->
+    <header
+    class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+  >
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="px-4">
+          <a href="#home" class="font-bold text-lg text-primary block py-6">
+           🎂
+          </a>
+        </div>
+        <div class="flex items-center px-4 lg:basis-3/5">
+          <button
+            class="block absolute right-2 lg:hidden"
+            id="humbergerMenu"
+            type="button"
+          >
+            <span
+              class="hamburger-line transition-all duration-300 origin-top-left"
+            ></span>
+            <span class="hamburger-line transition-all duration-300"></span>
+            <span
+              class="hamburger-line transition-all duration-300 origin-bottom-left"
+            ></span>
+          </button>
+  
+          <nav
+            class="hidden absolute py-5 px-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-slate-800 lg:dark:bg-transparent"
+            id="navMenu"
+          >
+            <ul
+              class="block lg:flex lg:justify-evenly space-y-4 lg:space-y-0 lg:gap-5 dark:text-white"
+            >
+              <li class="group">
+                <a
+                  href="#home"
+                  class="text-base text-dark group-hover:text-primary dark:text-white py-2"
+                  >Home</a
+                >
+              </li>
+              <li class="group">
+                <a
+                  href="#gallery"
+                  class="text-base text-dark group-hover:text-primary dark:text-white py-2"
+                  >Gallery</a
+                >
+              </li>
+              <li class="group">
+                <a
+                  href="#videos"
+                  class="text-base text-dark group-hover:text-primary dark:text-white py-2"
+                  >Videos</a
+                >
+              </li>
+            
+              <li class="sm:ml-5">
+                <div class="flex">
+                  <span class="mr-2 text-sm text-slate-500 dark:text-white">L</span>
+                  <input type="checkbox" class="hidden" id="dark-toggle" />
+                  <label for="dark-toggle">
+                    <div
+                      class="flex h-5 w-9 dark:bg-white cursor-pointer items-center rounded-full bg-slate-500 p-1 transition-all ease-in-out duration-300"
+                    >
+                      <div
+                        class="toggle-circle h-4 w-4 rounded-full bg-white transition-all ease-in-out duration-300 dark:bg-slate-600"
+                      ></div>
+                    </div>
+                  </label>
+                  <span class="ml-2 text-sm text-slate-500 dark:text-white">D</span>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <section id="home" class="pt-36 bg-light transition-all duration-300">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <!-- Teks dengan animasi AOS -->
+        <div class="w-full self-center md:w-1/2" >
+          <h1 class="text-base font-semibold text-primary md:text-xl order-2 md:order-1 mb-3" >
+            Happy 60 th Birthday , papii Jaka 🥳🎉
+          </h1>
+          <h2 class="font-normal text-slate-600 text-xs mb-4 lg:text-xl leading-relaxed" id="ucapan" >
+        
+          </h2>
+        </div>
+  
+        <!-- Gambar dengan animasi AOS -->
+        <div class="w-full self-end px-4 mt-6 md:mt-0 md:w-1/2 flex sm:justify-center md:order-2 order-1" data-aos="fade-in" data-aos-duration="2000" data-aos-delay="2000" id="imageSection">
+          <div class="relative lg:mt-9 sm:flex md:justify-center lg:right-0">
+            <img
+              src="./dist/img/Fto_papi.png"
+              alt="Gabriel's Birthday"
+              class="object-cover aspect-[3/4] h-[350px] w-[262px] transform-gpu relative z-10"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+      <!-- Gallery Section -->
+      <section
+      id="gallery"
+      class="pt-36 pb-32 bg-slate-100 dark:bg-dark transition-all duration-300 w-100" data-aos="fade-up"
+     data-aos-duration="1000" data-aos-delay="500"
+    >
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4
+              class="font-semibold text-lg text-primary mb-2 uppercase tracking-widest"
+            >
+              Gallery
+            </h4>
+            <h2
+              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
+            >
+            Papi best photos
+            </h2>
+            <p
+              class="font-medium text-md text-secondary leading-relaxed md:text-lg"
+            >
+           Diambil dari tiktok + WA papi 😅✌
+            </p>
+          </div>
+          <div class="flex flex-wrap">
+            <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
+                <div class="-m-1 flex flex-wrap md:-m-2">
+                    <div class="flex w-1/2 flex-wrap">
+                        <div class="w-1/2 p-1 md:p-2">
+                            <img
+                                alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center scale-effect"
+                                src="/dist/img/Papi1.jpg"
+                            />
+                        </div>
+                        <div class="w-1/2 p-1 md:p-2">
+                            <img
+                                alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center scale-effect"
+                                src="/dist/img/Papi2.jpeg"
+                            />
+                        </div>
+                        <div class="w-full p-1 md:p-2">
+                            <img
+                                alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center scale-effect"
+                                src="/dist/img/Papi4.jpeg"
+                            />
+                        </div>
+                    </div>
+                    <div class="flex w-1/2 flex-wrap">
+                        <div class="w-full p-1 md:p-2">
+                            <img
+                                alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center scale-effect"
+                                src="/dist/img/Papi5.jpeg"
+                            />
+                        </div>
+                        <div class="w-1/2 p-1 md:p-2">
+                            <img
+                                alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center scale-effect"
+                                src="/dist/img/Papi3.jpeg"
+                            />
+                        </div>
+                        <div class="w-1/2 p-1 md:p-2">
+                            <img
+                                alt="gallery"
+                                class="block h-full w-full rounded-lg object-cover object-center scale-effect"
+                                src="/dist/img/Papi6.jpeg"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Gallery Section -->
+    <section
+      id="videos"
+      class="pt-36 pb-32 dark:bg-dark transition-all duration-300" data-aos="fade-up"
+      data-aos-anchor-placement="top-center" data-aos-duration="1000" data-aos-delay="500"
+    >
+      <div class="container">
+        <div class="flex flex-wrap lg:items-center">
+          <div class="w-full px-4 mb-10 lg:w-1/2">
+            <h4
+              class="font-bold uppercase text-primary text-lg tracking-wide mb-3"
+            >
+              Kumpulan Video Papi Oget 🕺💃
+            </h4>
+            <h2
+              class="font-bold text-dark text-3xl mb-3 max-w-md lg:text-4xl dark:text-white"
+            >
+             Maaf pi gebi rekam gk izin 🙇‍♂️🙏
+            </h2>
+            <p
+              class="font-medium text-base text-secondary leading-relaxed max-w-xl lg:text-lg"
+            >
+              Diambil dari live papi hehe
+            </p>
+          </div>
+          <div class="w-full px-4 lg:w-1/2">
+                <div class="flex items-center">
+                  <video class="w-full shadow-lg" id="videoPapi" loop controls muted>
+                    <source
+                      src="/dist/Vid-Papi.mp4"
+                      type="video/mp4" />
+                  </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="bg-dark pt-24 pb-12">
+      <div class="container">
+        <div class="flex flex-wrap md:justify-center">
+          <div
+            class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3 mx-auto"
+          >
+            <h2 class="font-bold text-4xl text-white mb-5">Gebi</h2>
+            <h3 class="font-bold text-2xl mb-2"> Made with Love 💜</h3>
+      
+          </div>
+     
+        </div>
+        <div class="w-full pt-10 border-t border-slate-800">
+     
+          <p class="font-medium text-sm text-slate-600 text-center">
+            Dibuat Gebi dengan banyak kekurangan 😭
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Start -->
+    <a
+      href="#home"
+      class="px-2 hidden py-2 w-14 h-14 fixed z-[999] bottom-4 rounded-full right-4 bg-primary items-center justify-center hover:animate-bounce"
+      id="backToTop"
+    >
+      <span
+        class="block h-5 w-5 rotate-45 border-t-4 border-l-4 translate-y-[25%]"
+      ></span>
+    </a>
+
+
+    <script src="dist/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  // Fungsi untuk inisialisasi AOS
+  function initializeAOS() {
+    AOS.init(); // Inisialisasi AOS setelah tombol ditekan
+  }
+
+  $(document).ready(function() {
+    var $splashScreen = $('#splashScreen');
+var $enterSiteBtn = $('#enterSiteBtn');
+var $audio = $('#myAudio')[0]; 
+var $homeSection = $('#home');
+var $imageSection = $('#imageSection'); // Ganti dengan ID elemen gambar yang ingin ditampilkan
+
+var typingText = "Selamat ulang tahun ke 60 Papi!. Panjang umur, sehat, bahagia ,tetap rendah hati dan diberkati selalu papih. Semoga apa yang papi cita-citakan bisa terwujud pi. Terima kasih papi selalu kasih gebi renungan, bisa jadi teladan gebi dan bisa jadi orang tua online gebi pi. Thanks for being my father figure and making me feel like I have a dad. pi 🌻🙏";
+var $typingElement = $("#ucapan");
+
+
+
+function showTextSequentially(text, index, callback) {
+  if (index < text.length) {
+    // Membuat elemen span untuk karakter
+    var charSpan = $("<span></span>")
+      .text(text.charAt(index))
+      .addClass("text-slate-600")
+      .css("opacity", 0); 
+
+    $typingElement.append(charSpan); 
+
+    gsap.to(charSpan, {
+      opacity: 1,
+      duration: 0.2,
+      ease: "power1.in",
+    });
+
+    setTimeout(function() {
+      showTextSequentially(text, index + 1, callback); 
+    }, 50); 
+  } else {
+    if (callback) callback();
+  }
+}
+
+$homeSection.hide();
+
+
+
+$enterSiteBtn.on('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+
+  const jsConfetti = new JSConfetti();
+
+// Initially display confetti when the page loads
+jsConfetti.addConfetti({
+    emojis: ['🎉', '✨', '🌻', '💖'],
+    confettiNumber: 50, // Adjust this number based on how many confetti particles you want
+    confettiRadius: 6,
+    confettiColors: ['#ff0a54', '#ff477e', '#ff7096', '#ff85a1']
+});
+
+
+setTimeout(function(){
+  jsConfetti.clearCanvas();
+},3000);
+
+  confetti({
+  particleCount: 200,
+  spread: 20,
+  origin: { y: 0 },
+});
+
+const defaults = {
+  spread: 360,
+  ticks: 50,
+  gravity: 0,
+  decay: 0.94,
+  startVelocity: 30,
+  origin: { y: 0 },
+  shapes: ["star"],
+  colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
+};
+
+function shoot() {
+  confetti({
+    ...defaults,
+    particleCount: 40,
+    scalar: 1.2,
+    shapes: ["star"],
+  });
+
+
+}
+
+shoot();
+
+
+
+
+
+  $splashScreen.fadeOut(500, function() {
+    $homeSection.show();
+    $audio.play().catch(function(error) {
+      console.log('Autoplay was prevented:', error);
+    });
+    initializeAOS();
+  });
+
+  gsap.from("h1", {
+    duration: 2.5, 
+    opacity: 0,  
+    y: -50,      
+    ease: "power4.out", 
+  });
+
+  showTextSequentially(typingText, 0, function() {
+    $imageSection.fadeIn(500); 
+  });
+});
+  
+const images = document.querySelectorAll('.scale-effect');
+
+images.forEach((image) => {
+    // Tambahkan event listener untuk mouseenter
+    image.addEventListener('mouseenter', () => {
+        gsap.to(image, {
+            scale: 1.1, // Memperbesar sedikit
+            duration: 0.3,
+            ease: 'power1.out'
+        });
+    });
+
+    // Tambahkan event listener untuk mouseleave
+    image.addEventListener('mouseleave', () => {
+        gsap.to(image, {
+            scale: 1, // Kembalikan ke ukuran normal
+            duration: 0.3,
+            ease: 'power1.out'
+        });
+    });
+});
+
+var video = document.getElementById('videoPapi');
+var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.play(); // Mulai memutar video
+        } else {
+          video.pause(); // Pause video ketika keluar dari viewport
+        }
+      });
+    }, {
+      threshold: 0.5 // Set threshold untuk memulai saat 50% dari section terlihat
+    });
+
+    observer.observe(document.querySelector('#videos'));
+
+
+  });
+</script>
+  </body>
+</html>
